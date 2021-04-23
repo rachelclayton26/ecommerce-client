@@ -1,38 +1,68 @@
-.App {
+
+.wrapper{
+  width: 100%;
+  background-color: red;
+}
+
+
+.splash{
+  height: 1100px;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: blue;
+}
+
+.splashBox{
+  height: 980px;
+  width: 96%;
+  margin: auto;
+  background-color: pink;
+}
+
+
+.header{
+
+}
+#splashTitle{
+  font-size: 200pt;
   text-align: center;
+  line-height: 925px;
+  padding-bottom: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#splashImg{
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shop{
+  height: 1000px;
+  width: 85%;
+  margin: auto;
+  background-color: greenyellow;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shopTitle{
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.shopCategory{
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer{
+  height: 200px;
+  width: 100%;
+  background-color: yellow;
+}
+
+.copyright{
+  text-align: center;
+  font-family: ;
+  font-size: 25pt;
+  line-height: 200px;
 }
