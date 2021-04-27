@@ -1,4 +1,40 @@
 //Alec
+import React from 'react'
+
+const shop_container = document.getElementById('shop_container');
+const shopItems_number = 12;
+
+const getShopItems = async () => {
+	for (let i = 1; i <= {shopItems_number}; i++) {
+		await getShopItems(i);
+	}
+};
+
+const shopViewDummyData = [
+  {title: 'Blankie', description: 'softness is akin to fluffiness', price: '$1.99'},
+  {title: 'Pillow', description: 'rest your weary head', price: '$99.79'},
+  {title: 'Art', description: 'softness is akin to fluffiness', price: '$10.99'}
+]
+function ShopItems() {
+  return (
+    <div>
+
+
+
+    </div>
+  )
+}
+
+
+
+
+
+export default ShopItems;
+/*
+----------------------------------------
+  REACT FUNDAMENTALS REFERENCE CODE FOLLOWS
+----------------------------------------
+*/
 /*
 const Resources = () => {
   return (
@@ -63,5 +99,54 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+---------------------------------------
+  Rachel's Pokemon function follows 
+---------------------------------------
+function createPokemonCard(pokemon) {
+	const pokemonEl = document.createElement('div');
+	pokemonEl.classList.add('pokemon');
+
+	const poke_types = pokemon.types.map(type => type.type.name);
+	// console.log(pokemon.types.map(type => type.type.name));
+	const type = main_types.find(type => poke_types.indexOf(type) > -1);
+
+	const ability = pokemon.abilities.map(ability => ability.ability.name);
+
+	console.log(pokemon.abilities.map(ability => ability.ability.name));
+
+	
+	const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+	const color = colors[type];
+	
+	pokemonEl.style.backgroundColor = color;
+
+	const pokeInnerHTML = `
+		<div class="cardWrapper">
+			<div class="title">
+				<div class="name">${name}</div>
+				<div class="number">#${pokemon.id
+										.toString()
+										.padStart(3, '0')}</div>
+			</div>
+			
+			<div class="img-container">
+				<img src="https://pokeres.bastionbot.org/images/pokemon/${
+								pokemon.id
+							}.png" alt="${name}" />
+			</div>
+			
+			<div class="info"> 
+				<div class="type">Type: ${type}</div>
+				<div class="description">Description: ${ability}</div>
+			</div>	
+		</div>
+    `;
+
+	pokemonEl.innerHTML = pokeInnerHTML;
+
+	poke_container.appendChild(pokemonEl);
+}
+
+fetchPokemons();
+
 */

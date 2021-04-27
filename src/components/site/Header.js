@@ -1,5 +1,7 @@
 //Alec
-/*
+import React from 'react';
+
+
 import {
   Navbar, 
   NavbarBrand,
@@ -8,6 +10,15 @@ import {
   NavLink
  } from 'reactstrap';
 
+let Header(){
+  return(
+    <nav className="headerNav">
+
+
+    </nav>
+  )
+}
+ /*
 const Header = () => {
   return(
     <header>
@@ -23,6 +34,5 @@ const Header = () => {
       </header>
   );
 };
-
-export default Header;
 */
+export default Header;
