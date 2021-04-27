@@ -1,15 +1,16 @@
-const colors = {
-	whiteish: '#EAE1DF',
-  brose: '#B79492',
-  drkBrose: '#917c78',
-  green: '#667761',
-  drkGreen: '#545E56'
+/* Alec  */
+/* const colors = {
+	whiteish: '#EAE1DF';
+  brose: '#B79492';
+  drkBrose: '#917c78';
+  green: '#667761';
+  drkGreen: '#545E56';
 }
-	
+	 */
 /* body */
 body {
   padding: 15px;
-  background-color: white;
+  background-color: #B79492;
   font: Belleza;
 }
 

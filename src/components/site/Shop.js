@@ -1,24 +1,13 @@
 //Alec
-import React from 'react'
+import React from 'react';
 
-const shop_container = document.getElementById('shop_container');
-const shopItems_number = 12;
 
-const getShopItems = async () => {
-	for (let i = 1; i <= {shopItems_number}; i++) {
-		await getShopItems(i);
-	}
-};
 
-const shopViewDummyData = [
-  {title: 'Blankie', description: 'softness is akin to fluffiness', price: '$1.99'},
-  {title: 'Pillow', description: 'rest your weary head', price: '$99.79'},
-  {title: 'Art', description: 'softness is akin to fluffiness', price: '$10.99'}
-]
-function ShopItems() {
+const ShopItems = () => {
   return (
     <div>
-
+      <h1>Hello</h1>
+      <p>This is where our full list of shop items will be populated.</p>
 
 
     </div>
@@ -30,6 +19,21 @@ function ShopItems() {
 
 
 export default ShopItems;
+// const shop_container = document.getElementById('shop_container');
+// const shopItems_number = 12;
+
+// const getShopItems = async () => {
+// 	for (let i = 1; i <= {shopItems_number}; i++) {
+// 		await getShopItems(i);
+// 	}
+// };
+
+// const shopViewDummyData = [
+//   {title: 'Blankie', description: 'softness is akin to fluffiness', price: '$1.99'},
+//   {title: 'Pillow', description: 'rest your weary head', price: '$99.79'},
+//   {title: 'Art', description: 'the frame itself IS the art', price: '$10.99'}
+// ]
+
 /*
 ----------------------------------------
   REACT FUNDAMENTALS REFERENCE CODE FOLLOWS
