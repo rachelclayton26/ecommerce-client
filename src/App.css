@@ -20,9 +20,10 @@
   background-color: pink;
 }
 
-
 .header{
-
+  height: 980px;
+  width: 100%;
+  object-fit: cover;
 }
 #splashTitle{
   font-size: 200pt;
@@ -31,8 +32,24 @@
   padding-bottom: 15px;
 }
 
-#splashImg{
+.imageCropper {
+  width: 850pt;
+  height: 850pt;
+  display: block;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: -10vh;
+  overflow: hidden;
+  border-radius: 50%;
+} 
 
+#splashImg{
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 850pt;
+  height: 850pt;
+  object-fit: cover;
 }
 
 .shop{
