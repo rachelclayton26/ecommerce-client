@@ -11,19 +11,34 @@ import {
 import ShopItems from './components/site/Shop';
 
 
+import Navbar from './components/Navbar/Navbar';
+import './App.css';
+
 function App() {
   return (
-    <div>
-      <ShopItems />
+    <div className="App">
+      {/* <div className="nav"> */}
+          <Navbar />
+      {/* </div> */}
+      <div className="wrapper">
+        <div className="splash">
+          <div className="splashBox">
+            <div className="header"></div>
+            <img id="splashImg" src=""></img>
+            <div id="splashTitle">Hello</div>
+          </div>
+        </div>
+        <div className="shop">
+          <div className="shopTitle">Shop</div>
+          //Alec
+          {/* <Shop /> */}
+        </div>
+        <div className="footer">
+          <div className="copyright">The Fantastic Four  |  Copyright 2021</div>
+        </div>
+      </div>
     </div>
-    // <div className="App">
-    //  <Header />
-    //  <Router>
-    //    <Sidebar />
-    //  </Router>
-    //  <Footer />
-    // </div>
   );
-};
+}
 
 export default App;
