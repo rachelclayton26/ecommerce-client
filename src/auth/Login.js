@@ -19,7 +19,8 @@ const Login = (props) => {
             })
         }) .then((response) => response.json()
         ).then((data) => {
-            props.updateToken(data.sessionToken);
+            props.updateToken(data.sessionToken)
+            alert("User Successfully logged in!");
         });
     };
 
@@ -33,7 +34,7 @@ const Login = (props) => {
                 </FormGroup>
                 <FormGroup>
                 <Label htmlFor = "password">Password</Label>
-                <Input onChange = {(e) => setPassword(e.target.value)} name = "password" value={password} minlength="5" required/>
+                <Input onChange = {(e) => setPassword(e.target.value)} name = "password" value={password}/>
                 </FormGroup>
                 <Button type="submit">Login</Button>
             </Form> 

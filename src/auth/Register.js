@@ -10,6 +10,11 @@ const Register = (props) => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
+
+        if(password.length <5 || password.length > 25 ){
+            alert ('Please enter a password between 5 and 25 characters')
+        } else {
+
         fetch("http://localhost:3000/user/register", {
             method: "POST",
             body: JSON.stringify({user: {
@@ -24,8 +29,10 @@ const Register = (props) => {
             }).then((response) => response.json()
             ).then((data)=> {
                 props.updateToken(data.sessionToken)
+                alert("User Registered")
             }).catch(error => console.log(error))
         }
+    }
     
 
     return (
@@ -46,7 +53,7 @@ const Register = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor = "password">Password</Label>
-                    <Input onChange = {(e) => setPassword(e.target.value)} name = "password" value = {password}  title="password must be between 5-25 characters long"/>
+                    <Input placeholder = "Please enter a password between 5 and 25 chacaters" onChange = {(e) => setPassword(e.target.value)} name = "password" value = {password}  title="password must be between 5-25 characters long"/>
                 </FormGroup>
                  <Button type = "submit">Register</Button> 
  </Form>
@@ -60,4 +67,3 @@ export default Register;
 
 
 
-// {pattern={5,25} title="password must be between 5-25 characters long" />}
