@@ -1,44 +1,129 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-
-// import Footer from './components/site/Footer';
-// import Header from './components/site/Header';
-// import Sidebar from './components/site/Sidebar;'
-import {
-  BrowserRouter as Router 
-} from 'react-router-dom';
-import ShopItems from './components/site/Shop';
+import React, { useState, useEffect } from 'react';
+import { commerce } from './shopLibrary/commerce';
+import Products from './components/Products';
 
 
-import Navbar from './components/Navbar/Navbar';
-import './App.css';
+const App = () => {
+  const [products, setProducts] = useState({});
 
-function App() {
+  const fetchProducts = async () => {
+    const { productData } = await commerce.products.list();
+    setProducts(productData);
+  }
+  //create a useEffect hook to run at load and get our products
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  console.log(products);
+
   return (
-    <div className="App">
-      {/* <div className="nav"> */}
-          <Navbar />
-      {/* </div> */}
-      <div className="wrapper">
-        <div className="splash">
-          <div className="splashBox">
-            <div className="header"></div>
-            <img id="splashImg" src=""></img>
-            <div id="splashTitle">Hello</div>
-          </div>
-        </div>
-        <div className="shop">
-          <div className="shopTitle">Shop</div>
-          //Alec
-          {/* <Shop /> */}
-        </div>
-        <div className="footer">
-          <div className="copyright">The Fantastic Four  |  Copyright 2021</div>
-        </div>
-      </div>
+    <div>
+      <Products />
     </div>
-  );
+  )
 }
 
 export default App;
+
+/*
+import React, { useState, useEffect } from 'react';
+import { CssBaseline } from '@material-ui/core';
+import { 
+  BrowserRouter as Router, 
+  Switch, 
+  Route 
+} from 'react-router-dom';
+
+// import { Navbar, Products, Cart, Checkout } from './components';
+import { commerce } from './lib/commerce';
+
+const App = () => {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const fetchProducts = async () => {
+    const { data } = await commerce.products.list();
+
+    setProducts(data);
+  };
+
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
+  const handleAddToCart = async (productId, quantity) => {
+    const item = await commerce.cart.add(productId, quantity);
+
+    setCart(item.cart);
+  };
+
+  const handleUpdateCartQty = async (lineItemId, quantity) => {
+    const response = await commerce.cart.update(lineItemId, { quantity });
+
+    setCart(response.cart);
+  };
+
+  const handleRemoveFromCart = async (lineItemId) => {
+    const response = await commerce.cart.remove(lineItemId);
+
+    setCart(response.cart);
+  };
+
+  const handleEmptyCart = async () => {
+    const response = await commerce.cart.empty();
+
+    setCart(response.cart);
+  };
+
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+
+    setCart(newCart);
+  };
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
+
+      setOrder(incomingOrder);
+
+      refreshCart();
+    } catch (error) {
+      setErrorMessage(error.data.error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+    fetchCart();
+  }, []);
+
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+  return (
+    <Router>
+      <div style={{ display: 'flex' }}>
+        <CssBaseline />
+        <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
+        <Switch>
+          <Route exact path="/">
+            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+          </Route>
+          <Route exact path="/cart">
+            <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
+          </Route>
+          <Route path="/checkout" exact>
+            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
+*/
