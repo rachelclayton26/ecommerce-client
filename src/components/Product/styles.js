@@ -5,7 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 //The whole goal of these files is to export the function to return the styles object. 
 export default makeStyles(() => ({
   root: {
-    maxWidth: '100%',
+    maxWidth: '96%',
+    marginLeft: '2%',
+    backgroundColor: '#F5FCFF',
+    shadowColor:'#000',
+    shadowOpacity:'0.2',
+    shadowRadius:'1',
+
   },
   media: {
     height: 0,
