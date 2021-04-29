@@ -3,6 +3,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import AdminLogin from './components/AdminLogin/Admin';
 import About from './components/About/About';
+import Products from './components/Products';
 
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ function App() {
               <Cart />
             </Route>
             <Route path="/shop">
-              <Shop />
+              <Products />
             </Route>
             <Route path="/login_signup">
               <SignupLogin />
@@ -36,7 +37,7 @@ function App() {
             </Route>
             <Route path="/">
               <Home />
-              <Shop />
+              <Products />
             </Route>
           </Switch>
           <Footer />
@@ -45,9 +46,6 @@ function App() {
     ); 
   };
   
-  function Shop() {
-    return <h2>Shop</h2>;
-  }
 
   function SignupLogin() {
     return <h2>Sign Up or Log in</h2>;
