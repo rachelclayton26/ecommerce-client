@@ -19,8 +19,6 @@ import useStyles from './styles';
 const Product = ({product, img }) => {
   const classes = useStyles();
 
-  // const handleAddToCart = () => onAddToCart(product.id, 1);
-
   return (
     <Card className={classes.root}>
       <CardMedia className={classes.media} image={img} title={product.name} />
@@ -40,7 +38,7 @@ const Product = ({product, img }) => {
         <IconButton aria-label="Add to Cart">
           {/* //shopping card icon */}
           <AddShoppingCart />
-        </IconButton>
+        </IconButton>  
       </CardActions>
     </Card>
   );
