@@ -1,38 +1,245 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/* NAVBAR */
+.navbar{
+  height: 100px;
+  width: 100%;
+  background-color: #f5f5f4;
+}
+
+.navbar.navbar-expand-lg.navbar-light
+{
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+}
+
+#logo{
+  width: 190pt;
+  height: auto;
+}
+
+.collapse.navbar-collapse{
+  float: right;
+
+}
+
+.nav-item {
+  padding: 0pt;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-item a{
+  padding-left: 18px;
+  padding-right: 8px;
+  font-family: 'Open Sans';
+  background-color:#ffffff00;
+  border: 0pt solid #ffffff00;
+  color: #c75a00; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-item:hover {
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-size: 16pt;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #d4715b;
+}
+.actionbutton {
+  border: 2pt solid #d4715b;
+  border-radius: 3pt;
+  text-transform: uppercase;
+  color: #d4715b !important;
+  background-color: #ffffff00;
+  font-family: 'Montserrat';
+}
+
+.actionbutton:hover {
+  border: 2pt solid #d6a084;
+  text-transform: uppercase;
+  background-color: #d6a084;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#shoppingBag{
+  height: 20px;
+  width: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* HOME PAGE */
+
+.wrapper{
+  width: 100%;
+  background-color: red;
+}
+
+.splash{
+  height: 900px;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #fdfdfd;
+}
+
+.splashBox{
+  height: 780px;
+  width: 96%;
+  margin: auto;
+  position: relative;
+}
+
+#splashTitle{
+  font-size: 50pt;
+  color: white;
+  text-align: center;
+  margin-top: -500pt;
+  margin-right: 720pt;
+  padding-bottom: 0px;
+  position: relative;
+  z-index: 2;
+}
+
+#splashImg{
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  height: 780px;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+  object-position: 50% 80%;
+}
+
+
+/* ABOUT PAGE */
+
+.aboutWrapper{
+  width: 100%;
+}
+
+.aboutBox{
+  width: 70%;
+  height: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.aboutImg{
+ width:40%;
+ display: inline-block;
+}
+
+#aboutImg{
+  width:100%;
+  height: auto;
+}
+
+.aboutInfo{
+  width:60%;
+  margin-top: 80px;
+  height: auto;
+  display: inline-block;
+  padding: 60px;
+}
+
+
+.aboutTitle{
+  width: 100%;
+  font-size: 20pt;
+  text-transform: uppercase;
+  color: #2e676e;
+  padding-bottom: 30px;
+
+}
+
+.aboutText{
+  width: 100%;
+}
+
+
+#aboutShopButton{ 
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: #c75a00;
+  border-radius: 3pt;
+  border: 0pt solid;
+  
+}
+
+#aboutShopButton a{
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-size: 11pt;
+  text-align: center;
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
+
+#aboutShopButton a:hover{
+ text-decoration: none;
+}
+
+/* SHOP PAGE */
+
+.productBox {
+  width: 80%;
+}
+
+.shop{
+  height: 1000px;
+  width: 85%;
+  margin: auto;
+  background-color: greenyellow;
+}
+
+.shopTitle{
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* FOOTER */
+
+.footer{
+  height: 200px;
+  width: 100%;
+  background-color: #8d4001;
+  margin: 0pt;
+}
+
+.copyright{
+  margin: auto;
+  font-family: ;
+  font-size: 11pt;
+  line-height: 200px;
+  color: #c75a00;
+}
+
+
+/* ADMIN PAGE */
+.adminWrapper{
+  width: 100%;
+  Height: 900px;
+  background-color: pink;
+}
+.adminlogin{
+  width: 50%;
+  height: 450px;
+  background-color: #fdfdfd;
 }
