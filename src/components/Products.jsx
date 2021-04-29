@@ -15,7 +15,6 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    debugger;
     // GET request for all products using fetch, inside a of a useEffect React hook
     fetch('https://team4-our-e-commerce-app.herokuapp.com/shop/')
       //productData array[{}]
@@ -23,7 +22,6 @@ const Products = () => {
       .then(productData => {
         console.log(productData);
         if (productData) { // if there is a productData 
-          console.log(productData);
           setProducts(productData); // then set products with the productData we got back 
         }
       }) 
@@ -39,7 +37,7 @@ const Products = () => {
         <Grid container justify="center" spacing={4}>
           {products.map((product) => (
             <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-              <Product product={product}/> 
+              <Product product={product} img={product.media}/>
             </Grid>
           ))}
         </Grid>

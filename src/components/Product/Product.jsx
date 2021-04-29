@@ -16,14 +16,14 @@ import {
 
 import useStyles from './styles';
 
-const Product = ({ product }) => {
+const Product = ({product, img }) => {
   const classes = useStyles();
 
   // const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.media} image={product.image} title={product.name} />
+      <CardMedia className={classes.media} image={img} title={product.name} />
       <CardContent>
         <div className={classes.cardContent}>
           <Typography variant="h3" gutterBottom> 
