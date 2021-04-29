@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@material-ui/core';
- 
+import APIURL from '../helpers/environment';
 import Product from './Product/Product';
 
     // const mockProducts = [
@@ -14,7 +14,8 @@ const Products = () => {
   
   useEffect(() => {
     // GET request for all products using fetch, inside a of a useEffect React hook
-    fetch('https://team4-our-e-commerce-app.herokuapp.com/shop/')
+    console.log(`${APIURL}/shop/`)
+    fetch(`${APIURL}/shop/`)
       //productData array[{}]
       .then(res => res.json())//give me that and make it json 
       .then(productData => {

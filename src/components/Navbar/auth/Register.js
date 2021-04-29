@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-//import loginImg from "../components/navbar/assets/LoginImg.jpg"
+import APIURL from '../../../helpers/environment';
 
 const Register = (props) => {
     const [firstName, setFirstName] = useState('');
@@ -15,7 +15,7 @@ const Register = (props) => {
             alert ('Please enter a password between 5 and 25 characters')
         } else {
 
-        fetch("https://team4-our-e-commerce-app.herokuapp.com/user/register", {
+        fetch(`${APIURL}/user/register`, {
             method: "POST",
             body: JSON.stringify({user: {
                 firstName: firstName,

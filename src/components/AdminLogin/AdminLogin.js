@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
     const AdminLog = (props) => {
     const [email, setEmail] = useState('');
@@ -7,7 +8,7 @@ import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("https://team4-our-e-commerce-app.herokuapp.com/open_sesame/aladdin", {
+        fetch(`${APIURL}/open_sesame/aladdin`, {
             method: "POST",
             body: JSON.stringify({admin: {email: email, password: password}}),
             headers: new Headers({
