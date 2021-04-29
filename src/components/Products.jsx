@@ -1,5 +1,5 @@
-import React, {useEffect, useState } from 'react';
-import {Grid} from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Grid } from '@material-ui/core';
  
 import Product from './Product/Product';
 
@@ -12,27 +12,39 @@ import Product from './Product/Product';
 
 const Products = () => { 
   // this goes in Products() later >> ({ products, onAddToCart })
-  const [products, setProducts] = useState();
-
+  const [products, setProducts] = useState([]);
+  
   useEffect(() => {
-  // GET request for all products using fetch, inside a of a useEffect React hook
-  fetch('https://team4-our-e-commerce-app.herokuapp.com/shop/')
-      .then(response => response.json())
-      .then(data => setProducts(data.total));
+    debugger;
+    // GET request for all products using fetch, inside a of a useEffect React hook
+    fetch('https://team4-our-e-commerce-app.herokuapp.com/shop/')
+      //productData array[{}]
+      .then(res => res.json())
+      .then(productData => {
+        console.log(productData);
+        if (productData) { // if there is a productData 
+          console.log(productData);
+          setProducts(productData); // then set products with the productData we got back 
+        }
+      }) 
+      .catch(error => { 
+        console.error(error); //if you get an error, tell me what it is
+      //and stop
+      })
+    }, []); // empty dependency array means this effect will only run once (like componentDidMount in classes);
+ 
 
-// empty dependency array means this effect will only run once (like componentDidMount in classes)
-}, []);
-   return (
-     <main> 
-      <Grid container justify="center" spacing={4}>
-        {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-            <Product product={product}/> 
-          </Grid>
-        ))}
-      </Grid>
-    </main>
-);
+    return (
+      <main> 
+        <Grid container justify="center" spacing={4}>
+          {products.map((product) => (
+            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+              <Product product={product}/> 
+            </Grid>
+          ))}
+        </Grid>
+      </main>
+    );
 }
 
 export default Products;
