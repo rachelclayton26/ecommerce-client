@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
-const AdminLog = (props) => {
+    const AdminLog = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -9,19 +9,20 @@ const AdminLog = (props) => {
         event.preventDefault();
         fetch("https://team4-our-e-commerce-app.herokuapp.com/open_sesame/aladdin", {
             method: "POST",
-            body: JSON.stringify({admin: {
-                email: email,
-                password: password
-            }}),
+            body: JSON.stringify({admin: {email: email, password: password}}),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-        }) .then((response) => response.json()
-        ).then((data) => {
-            props.updateToken(data.sessionToken)
-            alert("User Successfully logged in!");
-        });
-    };
+        }) .then((response)=> {
+            if (response.status !== 200) {
+                alert("Unable to login.")
+            } else {
+                props.updateToken(response.json().sessionToken)  
+                alert("Succesfully logged in!")
+                //redirect to shopping cart (.navigate?)
+            }
+        }).catch(error => console.log(error))
+}
 
     return(
         <div class="adminWrapper">

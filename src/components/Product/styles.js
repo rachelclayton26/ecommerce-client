@@ -6,15 +6,15 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   root: {
     maxWidth: '96%',
-    marginLeft: '2%',
-    backgroundColor: '#F5FCFF',
+    marginLeft: '10%',
+    backgroundColor: '#f5f5f4',
     shadowColor:'#000',
     shadowOpacity:'0.2',
-    shadowRadius:'1',
+    shadowRadius:'0',
 
   },
   media: {
-    height: 0,
+    height: 500,
     paddingTop: '56.25%', // 16:9
   },
   cardActions: {

@@ -195,6 +195,10 @@
 
 /* SHOP PAGE */
 
+.productBox {
+  width: 80%;
+}
+
 .shop{
   height: 1000px;
   width: 85%;
@@ -209,7 +213,6 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 
 /* FOOTER */
 

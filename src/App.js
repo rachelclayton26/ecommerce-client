@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-import AdminLogin from './components/AdminLogin/Admin';
+import Admin from './components/AdminLogin/Admin';
 import About from './components/About/About';
 import Products from './components/Products';
 
@@ -27,13 +27,15 @@ function App() {
               <Cart />
             </Route>
             <Route path="/shop">
+              <div className="productBox">
               <Products />
+              </div>
             </Route>
             <Route path="/login_signup">
               <SignupLogin />
             </Route>
             <Route path="/open_sesame/aladdin">
-              <AdminLogin />
+              <Admin />
             </Route>
             <Route path="/">
               <Home />

@@ -26,13 +26,18 @@ const Register = (props) => {
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-            }).then((response) => response.json()
-            ).then((data)=> {
-                props.updateToken(data.sessionToken)
-                alert("User Registered")
+            // }).then((response) => response.json()
+        })
+            .then((response)=> {
+                if (response.status !== 201) {
+                    alert("Unable to register.")
+                } else {
+                    props.updateToken(response.json().sessionToken)  
+                    alert("Succesfully registered user!")
+                    //redirect to shopping cart (.navigate?)
+                }
             }).catch(error => console.log(error))
-        }
-    }
+    }}
     
 
     return (
@@ -61,8 +66,3 @@ const Register = (props) => {
     )}
 
 export default Register;
-
-
-
-
-
