@@ -1,10 +1,10 @@
-import {Raw} from 'reactstrap';
+import {Row} from 'reactstrap';
 
 const Footer = () => {
     return(
     <footer>
-        <Row>
-            <p>The Fantastic Four | Copyright 2021</p>
+        <Row className="footer">
+            <div className="copyright">The Fantastic Four | Copyright 2021</div>
         </Row>
     </footer>
     );
