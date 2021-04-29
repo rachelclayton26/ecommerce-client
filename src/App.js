@@ -2,6 +2,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Admin from './components/AdminLogin/Admin';
+import AdminR from './components/AdminLogin/AdminR';
 import About from './components/About/About';
 import Products from './components/Products';
 
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route path="/open_sesame/aladdin">
               <Admin />
+            </Route>
+            <Route path="/open_sesame/register">
+              <AdminR />
             </Route>
             <Route path="/">
               <Home />

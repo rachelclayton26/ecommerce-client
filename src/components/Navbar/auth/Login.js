@@ -29,17 +29,17 @@ const Login = (props) => {
 
     return(
         <div>
-             <h1>Login</h1>
+            <div className="adminTitle">Login</div>
             <Form onSubmit = {handleSubmit}> 
                 <FormGroup>
-                    <Label htmlFor = "email">Email</Label>
-                    <Input onChange = {(e) => setEmail(e.target.value)} name = "email" value={email}/>
+                    <Label htmlFor = "email"></Label>
+                    <Input placeholder="Email" onChange = {(e) => setEmail(e.target.value)} name = "email" value={email}/>
                 </FormGroup>
                 <FormGroup>
-                <Label htmlFor = "password">Password</Label>
-                <Input onChange = {(e) => setPassword(e.target.value)} name = "password" value={password}/>
+                <Label htmlFor = "password"></Label>
+                <Input placeholder="Password" onChange = {(e) => setPassword(e.target.value)} name = "password" value={password}/>
                 </FormGroup>
-                <Button type="submit">Login</Button>
+                <Button className="adminButton" type="submit">Login</Button>
             </Form> 
         </div>
     )

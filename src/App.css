@@ -170,7 +170,6 @@
   margin-right: auto;
   display: flex;
   height: 40px;
-  line-height: 40px;
   margin-top: 60px;
   margin-bottom: 60px;
   background-color: #c75a00;
@@ -189,8 +188,13 @@
   padding-right: 10pt;
 }
 
-#aboutShopButton a:hover{
+#aboutShopButton:hover{
  text-decoration: none;
+ background-color: #87aaaf;
+}
+
+#aboutShopButton a:hover{
+  text-decoration: none;
 }
 
 /* SHOP PAGE */
@@ -233,13 +237,55 @@
 
 
 /* ADMIN PAGE */
+
 .adminWrapper{
-  width: 100%;
-  Height: 900px;
-  background-color: pink;
+  width: 100%; 
+  height: 680px;
 }
+
+.adminTitle{
+  color: white;
+  font-size: 20pt;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-family: 'Open Sans';
+}
+
+.adminBox{
+  width: 50%;
+  Height: 500px;
+  margin: auto;
+  background-color: #87aaaf;
+  padding: 30pt;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .adminlogin{
   width: 50%;
   height: 450px;
   background-color: #fdfdfd;
+}
+
+.adminButton {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  background-color: #2d5e66;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-family: 'Open Sans';
+  border: 0pt;
+  text-align: center;
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.adminButton:hover {
+  background-color: #c75a00;
+  border: 0pt;
+}
+
+.modal-content{
+  background-color: #87aaaf;
 }

@@ -32,7 +32,7 @@ const SignupLogin = (props) => {
 
       <Button style={{fontFamily: 'Open Sans', backgroundColor:"#ffffff00", border:"0pt solid #ffffff00", color:"#c75a00"}} onClick={toggle1}>Register</Button>
       <Modal isOpen={modal1} toggle={toggle1} className={className}>
-        <ModalHeader toggle={toggle1}>We're so happy you're here - register with us to save your cart for easy access when you login in next time!</ModalHeader>
+        <ModalHeader toggle={toggle1}>Register with us to save your cart!</ModalHeader>
         <ModalBody>
           <Register updateToken = {updateToken}/>
         </ModalBody>

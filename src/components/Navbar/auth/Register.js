@@ -42,25 +42,25 @@ const Register = (props) => {
 
     return (
         <div>
-        <h1>Register</h1>
+        <div className="adminTitle">Register</div>
             <Form onSubmit = {handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor = "firstName">First Name</Label>
-                    <Input onChange = {(e) => setFirstName(e.target.value)} name = "firstName" value = {firstName}/>
+                    <Label htmlFor = "firstName"></Label>
+                    <Input placeholder="First Name" onChange = {(e) => setFirstName(e.target.value)} name = "firstName" value = {firstName}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor = "lastName">Last Name</Label>
-                    <Input onChange = {(e) => setLastName(e.target.value)} name = "lastName" value = {lastName}/>
+                    <Label htmlFor = "lastName"></Label>
+                    <Input placeholder="Last Name" onChange = {(e) => setLastName(e.target.value)} name = "lastName" value = {lastName}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor = "email">Email</Label>
-                    <Input onChange = {(e) => setEmail(e.target.value)} name = "email" value = {email}/>
+                    <Label htmlFor = "email"></Label>
+                    <Input placeholder="Email" onChange = {(e) => setEmail(e.target.value)} name = "email" value = {email}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor = "password">Password</Label>
-                    <Input placeholder = "Please enter a password between 5 and 25 chacaters" onChange = {(e) => setPassword(e.target.value)} name = "password" value = {password}  title="password must be between 5-25 characters long"/>
+                    <Label htmlFor = "password"></Label>
+                    <Input placeholder = "Password-- Between 5 and 25 chacaters" onChange = {(e) => setPassword(e.target.value)} name = "password" value = {password}  title="password must be between 5-25 characters long"/>
                 </FormGroup>
-                 <Button type = "submit">Register</Button> 
+                 <Button className="adminButton" type = "submit">Register</Button> 
  </Form>
 </div>
     )}
