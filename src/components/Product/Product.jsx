@@ -18,9 +18,12 @@ import useStyles from './styles';
 
 const Product = ({product, img }) => {
   const classes = useStyles();
-
+  const handleClick = () => {
+    console.log("Click click brah");
+  }
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={handleClick}> 
+    {/* here is how we'll make this card into a product detail page */}
       <CardMedia className={classes.media} image={img} title={product.name} />
       <CardContent>
         <div className={classes.cardContent}>
@@ -36,7 +39,7 @@ const Product = ({product, img }) => {
       {/* Add to cart - faked at first, stretch to build it: */}
       <CardActions disableSpacing className={classes.cardActions}>
         <IconButton aria-label="Add to Cart">
-          {/* //shopping card icon */}
+        {/* //shopping card icon */}
           <AddShoppingCart />
         </IconButton>  
       </CardActions>
