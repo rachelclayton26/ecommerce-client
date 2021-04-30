@@ -22,7 +22,9 @@ const Navbar = (props) =>{
     const clearToken = () => {
       localStorage.clear();
       setSessionToken('');
+      alert("User Successfully logged out!")
     }
+    
 
   return(
        <div>
@@ -44,7 +46,7 @@ const Navbar = (props) =>{
                          </li>
                     
                      <li className="nav-item">
-                         <a className="nav-link" href="#portfolio"><SignupLogin updateToken = {updateToken} clearToken={clearToken} /></a>
+                         <a className="nav-link" href="#portfolio"><SignupLogin updateToken = {updateToken} clickLogout={clearToken} /></a>
                          
                      </li>
 

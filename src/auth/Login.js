@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-//import loginImg from "../components/navbar/assets/LoginImg.jpg"
+
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -17,13 +17,17 @@ const Login = (props) => {
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-        }) .then((response) => response.json()
-        ).then((data) => {
-            props.updateToken(data.sessionToken)
-            alert("User Successfully logged in!");
-        });
-    };
-
+            .then((response)=> {
+                if (response.status !== 201) {
+                    alert("Unable to register.")
+                } else {
+                    props.updateToken(response.json().sessionToken)  
+                    alert("Succesfully logged in!")
+                    //redirect to shopping cart (.navigate?)
+                }
+            }).catch(error => console.log(error))
+        }
+        
     return(
         <div>
              <h1>Login</h1>
@@ -40,6 +44,6 @@ const Login = (props) => {
             </Form> 
         </div>
     )
-}
+   }
 
 export default Login;

@@ -34,7 +34,6 @@ const Register = (props) => {
         }
     }
     
-
     return (
         <div>
         <h1>Register</h1>
@@ -58,12 +57,7 @@ const Register = (props) => {
                  <Button type = "submit">Register</Button> 
  </Form>
 </div>
+    
     )}
 
 export default Register;
-
-
-
-
-
-
